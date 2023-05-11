@@ -1,0 +1,106 @@
+###
+GET http://localhost:5000
+
+###
+GET http://localhost:5000/users
+
+
+###
+POST http://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+	"email": "user@example.com",
+	"password": "pass"
+}
+
+###
+POST http://localhost:5000/users/signin
+Content-Type: application/json
+
+{
+	"email": "user@example.com",
+	"password": "pass"
+}
+
+###
+GET http://localhost:5000/quizs
+
+###
+POST http://localhost:5000/quizs
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiJwYXNzMiIsImlhdCI6MTY4Mzc5MzU5MH0.hMfmKf6XoHUpVrxmiT3rzWXGpr4HmfhQuPvdGtz9qHo
+
+{
+    "creator": "user@example.com",
+    "title": "Sports Trivia Challenge Plain",
+    "description": "Test your sports knowledge with our ultimate sports trivia quiz!",
+    "questions": [
+		{
+		"title": "Which country won the FIFA World Cup in 2018?",
+		"answerOptions": [
+			"Brazil",
+			"Germany",
+			"France",
+			"Spain"
+		],
+		"correctOptions": [3]
+		},
+		{
+		"title": "Who holds the record for the most career home runs in Major League Baseball?",
+		"answerOptions": [
+			"Babe Ruth",
+			"Barry Bonds",
+			"Hank Aaron",
+			"Alex Rodriguez"
+		],
+		"correctOptions": [2]
+		},
+		{
+		"title": "Which athlete has won the most Olympic gold medals in history?",
+		"answerOptions": [
+			"Michael Phelps",
+			"Usain Bolt",
+			"Simone Biles",
+			"Serena Williams"
+		],
+		"correctOptions": [1]
+		},
+		{
+		"title": "Which of the following sports are played with a ball? (Select all that apply)",
+		"answerOptions": [
+			"Football",
+			"Basketball",
+			"Tennis",
+			"Swimming"
+		],
+		"correctOptions": [1, 2, 3]
+		}
+    ]
+}
+
+###
+PATCH http://localhost:5000/quizs/645ca6d13233ce8cfcc2dc0c
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6InBhc3MiLCJpYXQiOjE2ODM3OTM5MDZ9.-kWYaE8IxpZ-slufMyeDWVAUS0l7ydaj6hcSYqbtuLg
+
+{
+    "title": "Sports Trivia Challenge Super Plain"
+}
+
+###
+DELETE http://localhost:5000/quizs/645ca6d13233ce8cfcc2dc0c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6InBhc3MiLCJpYXQiOjE2ODM3OTM5MDZ9.-kWYaE8IxpZ-slufMyeDWVAUS0l7ydaj6hcSYqbtuLg
+
+###
+GET http://localhost:5000/leaderboards
+
+###
+POST http://localhost:5000/leaderboards
+Content-Type: application/json
+
+{
+	"title": "Sports Trivia Challenge",
+	"email": "user@example.com",
+	"score": 80
+}
