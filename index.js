@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
 app.use("/users", usersRouter);
 app.use("/quizs", quizsRouter);
 app.use("/leaderboards", leaderboardsRouter);
